@@ -3,7 +3,7 @@ class Pokemon
 
   def initialize(attributes, hp = nil)
     attributes.each {|key, value| self.send(("#{key}="), value)}
-    @hp = hp
+    self.send(("hp="), hp)
   end
 
   def self.save(name, type, db)
