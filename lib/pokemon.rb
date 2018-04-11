@@ -1,8 +1,8 @@
 class Pokemon
-  def initialize(name, type, db)
-    @name = name
-    @type = type
-    @db = db
+  attr_accessor :name, :type, :age, :db
+
+  def initialize(attributes)
+    attributes.each {|key, value| self.send(("#{key}="), value)}
   end
 
   def self.save(name, breed, age, database_connection)
